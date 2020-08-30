@@ -74,6 +74,23 @@
                 Pizza List
             </div>
             <p>{{ $type }} - {{ $base }} - RM{{ $price }}</p>
+
+            <!-- if else statement -->
+            @if ($price > 15) <p>This pizza is expensive as fuck?!</p>
+            @elseif ($price < 5) <p>This pizza fking cheapp lol</p>
+                @else <p>This is normal price, meh</p>
+                @endif
+
+                <!-- unless statement -->
+                <!-- Statement will execute if condition is FALSE -->
+                @unless($base == 'Cheesy')
+                <p>The base pizza is not cheese</p>
+                @endunless
+
+                @php
+                $name = 'Syahir';
+                echo ($name);
+                @endphp
         </div>
     </div>
 </body>
