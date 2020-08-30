@@ -73,24 +73,26 @@
             <div class="title m-b-md">
                 Pizza List
             </div>
-            <p>{{ $type }} - {{ $base }} - RM{{ $price }}</p>
 
-            <!-- if else statement -->
-            @if ($price > 15) <p>This pizza is expensive as fuck?!</p>
-            @elseif ($price < 5) <p>This pizza fking cheapp lol</p>
-                @else <p>This is normal price, meh</p>
-                @endif
+            {{-- @for ($i = 0; $i < 5; $i++)
+                <p>The value of i is {{ $i }}</p>
+            @endfor --}}
 
-                <!-- unless statement -->
-                <!-- Statement will execute if condition is FALSE -->
-                @unless($base == 'Cheesy')
-                <p>The base pizza is not cheese</p>
-                @endunless
-
-                @php
-                $name = 'Syahir';
-                echo ($name);
-                @endphp
+            {{-- @for ($i = 0; $i < count($pizzas); $i++)
+                <p>{{ $pizzas[$i]['type'] }}</p>
+            @endfor --}}
+            
+            @foreach ($pizzas as $pizza)
+                <div>
+                    {{ $loop->index }}. {{ $pizza['type'] }} - {{ $pizza['base'] }}
+                    @if ($loop->first)
+                        <span> - First pizza!</span>
+                    @endif
+                    @if ($loop->last)
+                        <span>- Last pizza!</span>
+                    @endif
+                </div>
+            @endforeach
         </div>
     </div>
 </body>
