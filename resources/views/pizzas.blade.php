@@ -5,8 +5,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            <h1>Pizza List</h1>
-            <p>for {{ $name }} age {{ $age }}</p>
+            Pizza List
         </div>
 
         {{-- @for ($i = 0; $i < 5; $i++)

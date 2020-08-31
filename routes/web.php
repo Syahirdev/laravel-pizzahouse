@@ -17,30 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', function () {
-    $pizzas = [
-        [
-            'type' => 'Hawaiian',
-            'base' => 'Cheesy',
-        ],
-        [
-            'type' => 'Volcano',
-            'base' => 'Crispy',
-        ],
-        [
-            'type' => 'Vegies',
-            'base' => 'Thin',
-        ],
-    ];
+Route::get('/pizzas', 'PizzaController@index');
 
-    return view('pizzas', [
-        'pizzas' => $pizzas,
-        'name'=> request('name'),   
-        'age' => request('age'),
-    ]);
-});
-
-Route::get('/pizzas/{id}', function ($id) {
-
-    return view('details', ['id' => $id]);
-});
+Route::get('/pizzas/{id}', 'PizzaController@show');
