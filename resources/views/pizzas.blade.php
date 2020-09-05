@@ -18,13 +18,7 @@
         
         @foreach ($pizzas as $pizza)
             <div>
-                {{ $loop->index }}. {{ $pizza['type'] }} - {{ $pizza['base'] }}
-                @if ($loop->first)
-                    <span> - First pizza!</span>
-                @endif
-                @if ($loop->last)
-                    <span>- Last pizza!</span>
-                @endif
+                {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }} - RM{{ $pizza->price }}
             </div>
         @endforeach
     </div>
